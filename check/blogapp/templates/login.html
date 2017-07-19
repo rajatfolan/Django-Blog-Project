@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Login</title>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <form action="/accounts/auth/" method="post">
+     {% csrf_token %}
+  <div class="input-group">
+  <span  class="input-group-addon" id="sizing-addon2"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
+  <input style="width:30%" type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon2" name="username" >
+</div>
+<br/>
+<div class="input-group">
+<span  class="input-group-addon" id="sizing-addon2"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></span>
+<input style="width:30%" type="password" class="form-control" placeholder="Password" aria-describedby="sizing-addon2" name="password">
+</div>
+<br/>
+<a href="/reset-password/"><button type="submit" class="btn btn-default">Forgot Password</button></a>
+<button style="margin-left:50px" type="submit" class="btn btn-default"><span class="glyphicon glyphicon-send" aria-hidden="true"></span></button>
+
+</form>
+
+</div>
+
+{% endblock %}

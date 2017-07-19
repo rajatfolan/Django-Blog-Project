@@ -1,0 +1,25 @@
+{% extends 'loggedin.html' %}
+
+
+
+
+
+
+{% block content %}
+<div class="container">
+<form action="" method="post">
+   {% csrf_token %}
+{{form.as_p}}
+{{proform.as_p}}<br/>
+
+{% if pro.pic%}
+<img src="{{pro.pic.url}}"/>
+{% endif %}
+<br/>
+<a href="{% url 'password-change' %}">Change Password</a><br/>
+<button  style="margin-top:25px;" class="btn btn-default" type="submit">Save</button><br/>
+
+</form>
+
+</div>
+{% endblock %}

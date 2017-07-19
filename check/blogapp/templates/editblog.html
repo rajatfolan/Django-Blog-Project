@@ -1,0 +1,15 @@
+{% extends 'loggedin.html' %}
+
+
+{% block content %}
+
+
+<form action="" method="post">
+	{% csrf_token %}
+	<div>
+	{{form.as_p}}
+		<button class="btn btn-default" type="submit">submit</button>
+	</div>
+</form>
+
+{% endblock %}
